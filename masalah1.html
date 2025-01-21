@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Biodata TATA</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        /* Efek transisi global untuk elemen yang mendukung perubahan */
+        * {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
+        }
+
+        /* Efek Fade-In */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Aturan untuk animasi fade-in */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+        }
+
+        header .logo:hover {
+            color: #007BFF;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            position: relative;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 2px;
+            width: 0;
+            background-color: #007BFF;
+            transition: width 0.3s ease-in-out;
+        }
+
+        header nav a:hover::after {
+            width: 100%;
+        }
+
+        header nav a:hover {
+            color: #007BFF;
+        }
+
+        header nav a.active {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-top: 2px solid #ddd;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p,
+        footer .social {
+            margin: 0;
+        }
+
+        footer .social a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #555;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social a:hover {
+            color: #007BFF;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #444;
+        }
+
+        .card {
+            display: flex;
+            background-color: #ffffff;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 230px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .card-title {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #222;
+        }
+
+        .card-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #555555;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #28a745;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+            }
+
+            .card img {
+                width: 100%;
+                height: auto;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 15px 30px;
+            }
+
+            footer {
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <!-- Header -->
+    <header>
+        <div class="logo">Get To Know Who I Am?</div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="aboutus.html">ABOUT ME</a>
+            <a href="here.html">HERE</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container fade-in">
+
+        <div class="card">
+            <img src="bingung.jpg" alt="Weekly Facts">
+            <div class="card-content">
+                <h2 class="card-title">Kenapa sih kita harus tau jati diri kita?!</h2>
+                <p class="card-text">Mengetahui jati diri sangat penting bagi kita loh! karena hal ini membentuk dasar
+                    bagi perkembangan pribadi temen-temen, baik dalam konteks sosial, emosional, maupun psikologis.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="percayadiri.jpg" alt="Weekly Facts">
+            <div class="card-content">
+                <h2 class="card-title">1. Meningkatkan Kepercayaan Diri.</h2>
+                <p class="card-text">Ketika temen-temen sudah mengenali siapa diri kalian, temen-temen akan lebih mudah
+                    menerima kekuatan dan kelemahan mereka. Ini membantu mereka merasa lebih percaya diri dalam
+                    mengambil keputusan dan menghadapi tantangan hidup.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="tujuan.jpg" alt="United For You">
+            <div class="card-content">
+                <h2 class="card-title">2. Memilih Tujuan yang Sesuai.</h2>
+                <p class="card-text">Mengenal diri sendiri memungkinkan temen-temen untuk memahami minat, nilai, dan
+                    passion temen-temen, yang penting untuk menetapkan tujuan hidup yang lebih jelas dan sesuai dengan
+                    diri mereka, baik dalam pendidikan maupun karier. otomatis sudah tidak ada lagi tuh yang namanya
+                    fomo 😁
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="stress.jpg" alt="Smanti Unforgettable Video">
+            <div class="card-content">
+                <h2 class="card-title">3. Mengurangi Kebingungan dan Stres.</h2>
+                <p class="card-text">Proses pencarian jati diri sering kali penuh dengan kebingungan, terutama di masa
+                    remaja. Bagi yang tahu siapa dirinya cenderung lebih mampu mengelola perasaan dan stres, karena
+                    mereka lebih memahami bagaimana cara merespons situasi tertentu.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="sosial.avif" alt="Sunday Morning">
+            <div class="card-content">
+                <h2 class="card-title">4. Meningkatkan Keterampilan Sosial.</h2>
+                <p class="card-text">Seseorang yang memiliki pemahaman yang baik tentang dirinya lebih mudah untuk
+                    berinteraksi dengan orang lain, karena mereka tahu bagaimana cara berkomunikasi dan berhubungan
+                    dengan orang lain secara autentik.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="keluarga.jpg" alt="Sunday Morning">
+            <div class="card-content">
+                <h2 class="card-title">5. Membangun Hubungan yang Sehat.</h2>
+                <p class="card-text">Mengetahui jati diri juga membantu temen-temen dalam membangun hubungan yang sehat
+                    dengan teman, keluarga, dan orang lain di sekitar mereka. Mereka lebih mampu menjaga batasan,
+                    menghargai diri sendiri, dan menghindari hubungan yang tidak sehat.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="tanggung jawab.jpg" alt="Sunday Morning">
+            <div class="card-content">
+                <h2 class="card-title">6. Menumbuhkan Rasa Tanggung Jawab.</h2>
+                <p class="card-text">Anak yang mengenal dirinya lebih cenderung mengambil tanggung jawab atas pilihan
+                    dan tindakan mereka. Ini mengajarkan pentingnya konsekuensi dalam setiap keputusan yang mereka buat.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <p class="card-text">Secara keseluruhan, proses mengenal jati diri sangat penting untuk membentuk
+                    karakter yang kuat, membantu temen-temen menjalani kehidupan yang lebih seimbang, dan mempersiapkan
+                    mereka untuk masa depan yang lebih matang.
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 by Teen sheets</p>
+        <div class="social">
+            <a href="https://www.instagram.com/teen.sheets?igsh=ZDJiZ2d6a3oyaHFr"><i data-feather="instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>

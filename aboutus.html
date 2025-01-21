@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        /* Efek transisi global untuk elemen yang mendukung perubahan */
+        * {
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+
+            /* Tambahkan animasi fade-in */
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+        }
+
+        header .logo:hover {
+            color: #007BFF;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            position: relative;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 2px;
+            width: 0;
+            background-color: #007BFF;
+            transition: width 0.3s ease-in-out;
+        }
+
+        header nav a:hover::after {
+            width: 100%;
+        }
+
+        header nav a:hover {
+            color: #007BFF;
+        }
+
+        header nav a.active {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-image: url(Bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            gap: 45px;
+        }
+
+        .main .left {
+            flex: 0 0 auto;
+            text-align: center;
+            padding: 10px;
+            background-image: url(bgcard.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .main .left:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .main .left img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .main .left img:hover {
+            transform: scale(1.1);
+        }
+
+        .main .right {
+            flex: 1;
+            padding: 35px;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .main .right:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .main .right h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .main .right h1:hover {
+            color: #007BFF;
+        }
+
+        .main .right p {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+            border-top: 2px solid #ddd;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        footer:hover {
+            background-color: #f7f7f7;
+            box-shadow: 0 -6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p,
+        footer .social {
+            margin: 0;
+        }
+
+        footer .social a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #555;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        footer .social a:hover {
+            color: #007BFF;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Get To Know Who I Am?</div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="aboutus.html" class="active">ABOUT ME</a>
+            <a href="here.html">HERE</a>
+        </nav>
+    </header>
+
+    <div class="main">
+        <div class="left">
+            <img src="Profile.jpg" alt="Logo OSIS SMAN 3 Batam">
+        </div>
+        <div class="right">
+            <h1>Thalita Fadillah Ramadhani</h1>
+            <p>-Founder Teens Sheets <br>
+                -Aktivis Muda Kemanusiaan di ranah anak dan perempuan <br>
+                -Public Speaker <br>
+                -Advokat Anak dan Perempuan <br>
+                -Ketua Raeksa (Remaja anti eksploitasi seksual anak)
+            </p>
+            <p>Pendidikan: Siswi SMA Negeri 3 Batam
+            </p>
+            <p>Pengalaman: <br>
+                🎖Aktivis muda di bidang kemanusiaan, khususnya dalam isu hak anak dan perempuan <br>
+                🎖Public speaker dan fasilitator muda dalam berbagai seminar dan pelatihan <br>
+                🎖Advokasi untuk perlindungan anak, pemberdayaan perempuan <br>
+                🎖perwakilan suara hati anak kota Batam tahun 2024 (peringatan Hari Anak Nasional)
+            </p>
+            <p>Program yang Digagas:
+                Founder dari Teens Sheets, platform yang menyediakan program “Get to Know Who I Am?” untuk membantu
+                remaja menemukan jati diri dan potensi diri mereka.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 by Teen Sheets</p>
+        <div class="social">
+            <a href="https://www.instagram.com/teen.sheets?igsh=ZDJiZ2d6a3oyaHFr"><i data-feather="instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>

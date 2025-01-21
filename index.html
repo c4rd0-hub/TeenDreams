@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Efek transisi global untuk elemen yang mendukung perubahan */
+        * {
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Bg.jpg');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+
+            /* Tambahkan animasi fade-in */
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+            border-bottom: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease-in-out;
+        }
+
+        header .logo:hover {
+            color: #007BFF;
+        }
+
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            position: relative;
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            height: 2px;
+            width: 0;
+            background-color: #007BFF;
+            transition: width 0.3s ease-in-out;
+        }
+
+        header nav a:hover::after {
+            width: 100%;
+        }
+
+        header nav a:hover {
+            color: #007BFF;
+        }
+
+        header nav a.active {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        /* Main */
+        .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1300px;
+            margin: 50px auto;
+            padding: 20px;
+            gap: 30px;
+        }
+
+        .main .card {
+            flex: 1;
+            background-image: url(bgcard.jpg);
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .main .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .main .card img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .main .card img:hover {
+            transform: scale(1.1);
+        }
+
+        .main .card h2 {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+
+        .main .card .social a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #000000;
+            font-size: 24px;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .main .card .social a:hover {
+            color: #007BFF;
+            transform: scale(1.2);
+        }
+
+        .main .welcome {
+            flex: 2;
+            text-align: left;
+            padding: 15px;
+            border-left: 4px solid #007BFF;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .main .welcome:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .main .welcome h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .main .welcome h2:hover {
+            color: #007BFF;
+        }
+
+        .main .welcome h1 {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.8;
+            color: #34495E;
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: white;
+            border-top: 2px solid #ddd;
+            z-index: 1;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        footer:hover {
+            background-color: #f7f7f7;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .social a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #555;
+            font-size: 24px;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        footer .social a:hover {
+            color: #007BFF;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Get To Know Who I Am?</div>
+        <nav>
+            <a href="index.html" class="active">HOME</a>
+            <a href="aboutus.html">ABOUT ME</a>
+            <a href="here.html">HERE</a>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <div class="main">
+        <div class="card">
+            <img src="Logo TATA.jpg" alt="Logo">
+            <h2>Teen sheets</h2>
+            <div class="social">
+                <a href="https://www.instagram.com/teen.sheets?igsh=ZDJiZ2d6a3oyaHFr"><i
+                        data-feather="instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="welcome">
+            <h2>Hello, Fellas! 👋</h2>
+            <h1>
+                Halo Fellas 👋🌟💓, <br>
+                Saya <strong>Thalita Fadillah Ramadhani</strong>, sahabat kalian 🤩‼<br>
+                Founder dari <strong>Teens Sheets</strong>. <br>
+                Di Teens Sheets, kami berkomitmen untuk membantu remaja menemukan jati dirinya melalui program unggulan
+                loh,
+                <strong>“Get to Know Who I Am?”</strong>. Program ini dirancang khusus untuk membantu teman-teman dalam
+                menggali
+                potensi, mengenal lebih dalam siapa mereka, dan menemukan arah hidup yang sesuai dengan kepribadian
+                mereka. Mari
+                bersama-sama memulai perjalanan menuju pemahaman diri yang lebih baik!
+                <br><br>
+                <span>#TeensSheets #GetToKnowWhoIAm #SelfDiscovery #FindingYourself</span>
+            </h1>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 by Teen sheets</p>
+        <div class="social">
+            <a href="https://www.instagram.com/teen.sheets?igsh=ZDJiZ2d6a3oyaHFr"><i data-feather="instagram"></i></a>
+        </div>
+    </footer>
+    <script>
+        feather.replace();
+    </script>
+
+</body>
+
+</html>
